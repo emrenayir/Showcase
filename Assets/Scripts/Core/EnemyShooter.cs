@@ -8,15 +8,14 @@ namespace Core
     public class EnemyShooter : BaseShooter
     {
         [SerializeField]
-        private float minFireRate = 1f;  // Minimum ateş etme aralığı
+        private float minFireRate = 1f;  
         [SerializeField]
-        private float maxFireRate = 3f;  // Maksimum ateş etme aralığı
+        private float maxFireRate = 3f;
 
         private void Start()
         {
             StartCoroutine(ShootDelay());
         }
-
         public override void Shoot()
         {
             var rotation = firePoint.rotation;
@@ -28,7 +27,6 @@ namespace Core
                 bulletInstance.GetComponent<MeshRenderer>().material.color = Color.red;
             }
         }
-
         private IEnumerator ShootDelay()
         {
             while (true)
